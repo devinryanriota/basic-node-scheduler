@@ -19,4 +19,8 @@ cron.schedule(EVERY_30_MINS_CRON, () => {
   FetchService.getFeed()
 })
 
+app.get('/', (req, res) => {
+  res.send('it is running!')
+})
+
 app.listen(PORT)
