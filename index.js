@@ -19,8 +19,16 @@ cron.schedule(EVERY_30_MINS_CRON, () => {
   FetchService.getFeed()
 })
 
+app.get('/', (req, res) => {
+  res.send('nothing to see here')
+})
+
 app.get('/health', (req, res) => {
   res.send('it is running!')
+})
+
+app.get('/easter', (req, res) => {
+  res.send('you have reached the land of infinite retreat. please retreat immediately :)')
 })
 
 app.listen(PORT)
