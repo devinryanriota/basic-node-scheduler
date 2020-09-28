@@ -1,4 +1,5 @@
 const axios = require('axios')
+const moment = require('moment')
 
 const FEATURED_API = 'https://yukbantubisnis.online/api/businesses/featured'
 const FEED_API = 'https://yukbantubisnis.online/api/businesses/feed'
@@ -10,10 +11,11 @@ FetchService.getFeatured = () => {
     params: {}
   })
   .then((response) => {
+    const time = moment().format('yyyy-MM-DD HH:mm:ss')
     if(response !== null && response.data.meta.http_status === 200) {
-      console.log('[FETCH_SERVICE] successfully fetch featured at ' + Date.now())
+      console.log('[FETCH_SERVICE] successfully fetch featured at ' + time)
     } else {
-      console.log('[FETCH_SERVICE] failed to fetch featured at ' + Date.now())
+      console.log('[FETCH_SERVICE] failed to fetch featured at ' + time)
     }
   })
 }
@@ -23,10 +25,11 @@ FetchService.getFeed = () => {
     params: {}
   })
   .then((response) => {
+    const time = moment().format('yyyy-MM-DD HH:mm:ss')
     if(response !== null && response.data.meta.http_status === 200) {
-      console.log('[FETCH_SERVICE] successfully fetch feed at ' + Date.now())
+      console.log('[FETCH_SERVICE] successfully fetch feed at ' + time)
     } else {
-      console.log('[FETCH_SERVICE] failed to fetch feed at ' + Date.now())
+      console.log('[FETCH_SERVICE] failed to fetch feed at ' + time)
     }
   })
 }
