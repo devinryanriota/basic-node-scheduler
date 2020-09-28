@@ -6,6 +6,7 @@
   "author": "Devin Ryan Riota <devinryanriota@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.20.0",
     "express": "^4.17.1",
     "node-cron": "^2.0.3"
   }
