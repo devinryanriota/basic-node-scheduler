@@ -2,7 +2,7 @@ const express = require('express')
 const cron = require('node-cron')
 const FetchService = require('./service/FetchService')
 
-const PORT = 3030
+const PORT = process.env.PORT || 3000
 
 //schedule
 const EVERY_1_MIN_CRON = '* * * * *'
