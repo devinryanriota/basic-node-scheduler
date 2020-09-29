@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3000
 
 //schedule
 const EVERY_1_MIN_CRON = '* * * * *'
+const EVERY_10_MINS_CRON = '*/15 * * * *'
 const EVERY_15_MINS_CRON = '*/15 * * * *'
 const EVERY_30_MINS_CRON = '*/30 * * * *'
 const EVERY_60_MINS_CRON = '0 */1 * * *'
@@ -14,7 +15,7 @@ app = express()
 
 console.log('app running on port: ' +  PORT)
 
-cron.schedule(EVERY_30_MINS_CRON, () => {
+cron.schedule(EVERY_10_MINS_CRON, () => {
   FetchService.getFeatured()
   FetchService.getFeed()
 })
